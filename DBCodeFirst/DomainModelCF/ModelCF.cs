@@ -16,6 +16,7 @@ namespace DBCodeFirst
     {
         public ModelCFEntities() : base("name=ModelCFEntities")
         {
+        //dfgdf
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelCFEntities, Configuration>());
             /*sfsdfsd*/
         }
