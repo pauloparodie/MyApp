@@ -12,11 +12,6 @@ pipeline {
 				echo 'NO BRANCH MAIN'
 			}
 		}
-		stage('pre2') {
-			steps {
-				echo 'no pre2'
-			}
-		}
 		stage('checkout') {
 			agent any
 			steps {
