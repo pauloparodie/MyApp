@@ -30,4 +30,4 @@ namespace ServiceLayer.DomainModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<animal> animals { get; set; }
     }
-}
+}//erter
