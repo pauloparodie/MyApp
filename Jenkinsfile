@@ -8,6 +8,7 @@ pipeline {
 	
 	stages {
 		stage('pre') {
+			agent any
 			steps {
 				println ('NO BRANCH MAIN')		
 			}
@@ -27,6 +28,7 @@ pipeline {
 			}
 		}
 		stage('build') {
+			agent any
 			steps {
 				println 'val1->$(val1)'
 				println '$(BUILD_ID)->$(JOB_NAME):$(BUILD_NAME)'
