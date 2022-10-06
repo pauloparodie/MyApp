@@ -12,16 +12,6 @@ pipeline {
 				echo 'NO BRANCH MAIN'
 			}
 		}
-		stage('pre2') {
-			when {
-				expression {
-					env.VAL == 'ola'
-				} 
-			} 
-			steps {
-				echo 'igual'
-			}
-		}
 		stage('checkout') {
 			agent any
 			steps {
