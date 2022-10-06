@@ -22,7 +22,7 @@ int a = 0;
             : base("name=ModelEntities")
         {
         }
-    
+    //dtetr
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
