@@ -15,16 +15,16 @@ pipeline {
 		}
 		stage('checkout') {
 			agent any
+			when {
+				expression {
+					$(env.val1) == 'ola' {
+						println 'diferente'
+					}
+				}	
+			}
 			steps {
 				println 'branch->$(env.branchname)'
 				checkout scm
-				when {
-					expression {
-						$(env.val1) == 'ola' {
-							println 'diferente'
-						}
-					}	
-				}
 				println 'RESULT->$(currentBuild.result)'
 				junit '**/target/*.xml'
 			}
@@ -33,7 +33,7 @@ pipeline {
 			agent any
 			steps {
 				println 'val1->$(env.val1)'
-				println '$(BUILD_ID)->$(JOB_NAME):$(BUILD_NAME)'
+				println '$(env.BUILD_ID)->$(env.JOB_NAME):$(env.BUILD_NAME)'
 			}
 		}
 	}
