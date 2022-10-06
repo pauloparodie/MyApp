@@ -14,7 +14,7 @@ namespace DBCodeFirst
         [Column("Cod")]
         [Key]
         public int Cod { get; set; }
-
+//sdfsd
         [Column("Title",TypeName = "varchar(max)")]
         public string Title { get; set; }
     
