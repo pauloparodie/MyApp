@@ -20,7 +20,7 @@ namespace DBCodeFirst
     
         public int AuthorId { get; set; }
 
-        [ForeignKey("AuthorId")]
+        [ForeignKey("AuthorId")]//sfgdfg
         public virtual Author Author  { get; set; }
     }
 }
