@@ -13,8 +13,8 @@ pipeline {
 			}
 		}
 		stage('checkout') {
+			agent any
 			steps {
-				agent any
 				println 'branch->$(branchname)'
 				checkout sm
 				when {
