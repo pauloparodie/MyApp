@@ -2,38 +2,40 @@ pipeline {
 	agent none
 	
 	environment {
-		val1 = 'ola'
-		branchname = '$(BRANCH_NAME)'
+		VAL = 'ola'
+		BRANCHNAME = BRANCH_NAME
 	}
 	
 	stages {
 		stages('pre') {
-			steps {)
-				println ('NO BRANCH MAIN'')		
+			steps {
+				echo 'NO BRANCH MAIN'
 			}
-		)
+		}
+		stages('pre2') {
+			if (env.VAL == 'ola') {                                          
+					echo 'igual'
+				} else {                                   
+					echo 'diferente'
+				} 
+		}
 		stage('checkout') {
-			println 'branch->$(branchname)'
 			agent any
-			checkout sm
-			when {
-				expression {
-					$(val1) == 'ola' {
-						println 'diferente'
-					}
-			}
+			steps {
+				echo 'checkout do BRANCH->$(env.BRANCHNAME)'
+				checkout sm
+			}		
 		}
 		stage('build') {
 			steps {
-				println 'val1->$(val1)'
-				println '$(BUILD_ID)->$(JOB_NAME):$(BUILD_NAME)'
+				echo '$(BUILD_ID)->$(JOB_NAME):$(BUILD_NAME)'
 			}
 		}
 	}
 	
 	post {
 		success {
-			println('Sucesso')
+			echo 'Sucesso'
 		}
 	}
 }
