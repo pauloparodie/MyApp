@@ -8,7 +8,7 @@ pipeline {
 	
 	stages {
 		stages('pre') {
-			steps {)
+			steps {
 				println ('NO BRANCH MAIN')		
 			}
 		)
