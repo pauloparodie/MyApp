@@ -10,7 +10,7 @@ pipeline {
 			agent any
 			steps {
 				echo "NO BRANCH MAIN->${env.VAL}"
-				bat("git status")
+				bat("git -C d:\\projectos\\testes\\myapp status")
 			}
 		}
 		stage('pre2') {
