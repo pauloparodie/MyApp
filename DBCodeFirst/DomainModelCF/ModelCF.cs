@@ -8,6 +8,8 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Core.Objects;
 using DBCodeFirst.Migrations;
 
+/*teste*/
+
 namespace DBCodeFirst
 {
     public class ModelCFEntities : DbContext
