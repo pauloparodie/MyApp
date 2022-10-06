@@ -7,11 +7,6 @@ pipeline {
 	}
 	
 	stages {
-		stage('pre') {
-			steps {
-				echo 'NO BRANCH MAIN'
-			}
-		}
 		stage('checkout') {
 			agent any
 			steps {
@@ -29,6 +24,9 @@ pipeline {
 	post {
 		success {
 			echo 'Sucesso'
+		}
+		failure {
+			echo 'Erro'
 		}
 	}
 }
