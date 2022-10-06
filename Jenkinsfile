@@ -13,11 +13,20 @@ pipeline {
 			}
 		}
 		stage('pre2') {
-			if (env.VAL == 'ola') {                                          
+			when {
+				expression {
+					1=1
+				}
+			}
+			steps {
+				script {
+				    if (env.VAL == ola) {
 					echo 'igual'
-				} else {                                   
+				    } else {
 					echo 'diferente'
-				} 
+				    }
+				}
+			}
 		}
 		stage('checkout') {
 			agent any
