@@ -8,12 +8,13 @@ pipeline {
 	stages {
 		stage('pre') {
 			steps {
-				echo 'NO BRANCH MAIN->${env.VAL}'
+				echo "NO BRANCH MAIN->${env.VAL}"
 			}
 		}
 		stage('checkout') {
 			agent any
 			steps {
+				echo "------->CHECKOUT do BRANCH->${env.BRANCH_NAME}"
 				checkout scm
 			}		
 		}
