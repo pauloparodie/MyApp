@@ -19,10 +19,10 @@ namespace DBCodeFirst
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelCFEntities, Configuration>());
             /*sfsdfsd*/
         }
-
+        /*ssdf*/
         public virtual DbSet<Author> Authors { get; set; }
 
-        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Book> Books { get; set; }//dfgd
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
