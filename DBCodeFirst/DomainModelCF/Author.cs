@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-
+/*teste*/
 namespace DBCodeFirst
 {
     [Table("Author",Schema ="dbo")]
