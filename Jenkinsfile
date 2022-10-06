@@ -3,7 +3,6 @@ pipeline {
 	
 	environment {
 		VAL = 'ola'
-		BRANCHNAME = $(BRANCH_NAME)
 	}
 	
 	stages {
