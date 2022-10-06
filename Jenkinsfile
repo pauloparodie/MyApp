@@ -3,7 +3,7 @@ pipeline {
 	
 	environment {
 		val1 = 'ola'
-		branchname = '$(BRANCH_NAME)'
+		branchname = '$(env.BRANCH_NAME)'
 	}
 	
 	stages {
