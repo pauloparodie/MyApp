@@ -10,6 +10,7 @@ pipeline {
 			agent any
 			steps {
 				echo "NO BRANCH MAIN->${env.VAL}"
+				bat("git config --global --add safe.directory D:/Projectos/Testes/MyApp ")
 				bat("git -C d:\\projectos\\testes\\myapp status")
 			}
 		}
