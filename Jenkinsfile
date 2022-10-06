@@ -9,6 +9,7 @@ pipeline {
 		stage('pre') {
 			steps {
 				echo "NO BRANCH MAIN->${env.VAL}"
+				bat("xcopy c:\\temp\\teste.txt c:\\temp\\old\\teste2.txt")
 			}
 		}
 		stage('pre2') {
