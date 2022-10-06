@@ -1,0 +1,21 @@
+﻿
+
+
+
+$val1 : 60px;
+
+
+
+.meu {
+    font-size: $val1;
+}
+
+@mixin conta($arg1,$arg2)
+{
+    color:red;
+    #{$arg1}:$arg2;
+}
+
+.teu {
+    @include  conta(display,inline)
+}

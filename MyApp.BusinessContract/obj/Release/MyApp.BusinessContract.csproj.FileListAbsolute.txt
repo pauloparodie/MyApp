@@ -1,0 +1,7 @@
+D:\Projectos\Testes\MyApp\MyApp.BusinessContract\bin\Release\MyApp.BusinessContract.dll
+D:\Projectos\Testes\MyApp\MyApp.BusinessContract\bin\Release\MyApp.BusinessContract.pdb
+D:\Projectos\Testes\MyApp\MyApp.BusinessContract\bin\Release\MyApp.DomainModel.dll
+D:\Projectos\Testes\MyApp\MyApp.BusinessContract\bin\Release\MyApp.DomainModel.pdb
+D:\Projectos\Testes\MyApp\MyApp.BusinessContract\obj\Release\MyApp.BusinessContract.csprojResolveAssemblyReference.cache
+D:\Projectos\Testes\MyApp\MyApp.BusinessContract\obj\Release\MyApp.BusinessContract.dll
+D:\Projectos\Testes\MyApp\MyApp.BusinessContract\obj\Release\MyApp.BusinessContract.pdb

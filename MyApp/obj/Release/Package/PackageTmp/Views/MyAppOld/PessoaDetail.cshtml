@@ -1,0 +1,51 @@
+﻿@model MyApp.ViewModel.PessoaViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pessoa</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+
+        <p class="display-1">Pessoa</p>
+
+        <form method="post" action="/PessoaOld" enctype="multipart/form-data">
+            <div class="row">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="name" id="name" value="@(Model?.Name)" />
+            </div>
+            <div class="row">
+                <label for="pais" class="form-label">Pais</label>
+                <input type="text" class="form-control" name="pais" id="pais" value="@(Model?.Pais)" />
+            </div>
+            <div class="row">
+                <label for="age" class="form-label">Idade</label>
+                <input type="text" class="form-control" name="age" id="age" value="@(Model?.Age)" />
+            </div>
+            <div class="row">
+                <label for="photo" class="form-label">Foto</label>
+                @if (!String.IsNullOrWhiteSpace(Model?.PhotoName))
+                {
+                    <span class="w-auto bg-info text-dark rounded m-1">@(Model?.PhotoName)</span>
+                }
+                <input id="photo" type="file" class="form-control" name="photo" />
+            </div>
+            <input type="hidden" name="cod" value="@((Model?.Cod)??0)" />
+
+            <button type="submit" class="btn btn-success mt-2">Gravar</button>
+        </form>
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>

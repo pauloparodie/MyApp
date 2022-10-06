@@ -1,0 +1,84 @@
+﻿@model List<MyApp.ViewModel.PessoaViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pessoas</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <p class="display-1">Pessoas</p>
+
+        <a class="btn btn-primary" href="/Pessoa">Criar</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Cod
+                    </th>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Idade
+                    </th>
+                    <th>
+                        Pais
+                    </th>
+                    <th>
+                        Foto
+                    </th>
+                    <th>
+                        Num Animais
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var elem in Model)
+                {
+                    <tr>
+                        <td>
+                            @elem.Cod
+                        </td>
+                        <td>
+                            @elem.Name
+                        </td>
+                        <td>
+                            @elem.Age
+                        </td>
+                        <td>
+                            @elem.Pais
+                        </td>
+                        <td>
+                            @elem.PhotoName
+                        </td>
+                        <td>
+                            @elem.Animals.Count
+                        </td>
+                        <td>
+                            <a class=" btn btn-info" href="/PessoaOld/@elem.Cod">Editar</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+        <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+        <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\MyApp.DataLayer.dll.config
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\MyApp.DataLayer.dll
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\MyApp.DataLayer.pdb
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\EntityFramework.dll
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\EntityFramework.SqlServer.dll
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\MyApp.DomainModel.dll
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\MyApp.DomainModel.pdb
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\EntityFramework.xml
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\bin\Release\EntityFramework.SqlServer.xml
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\obj\Release\MyApp.DataLayer.csprojResolveAssemblyReference.cache
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\obj\Release\MyApp.DataLayer.Migrations.Init.resources
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\obj\Release\MyApp.DataLayer.csproj.GenerateResource.Cache
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\obj\Release\MyApp.DataLayer.dll
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\obj\Release\MyApp.DataLayer.pdb
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\obj\Release\MyApp.DataLayer.Migrations.ChangePhotoName.resources
+D:\Projectos\Testes\MyApp\MyApp.DataLayer\obj\Release\MyApp.DataLayer.Migrations.ChangeAnimalDonoCod.resources

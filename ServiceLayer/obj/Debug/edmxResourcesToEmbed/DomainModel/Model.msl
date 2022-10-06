@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="ModelEntities">
+    <EntitySetMapping Name="animals">
+      <EntityTypeMapping TypeName="testModel.animal">
+        <MappingFragment StoreEntitySet="animals">
+          <ScalarProperty Name="cod" ColumnName="cod" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="raca" ColumnName="raca" />
+          <ScalarProperty Name="dono" ColumnName="dono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pessoas">
+      <EntityTypeMapping TypeName="testModel.Pessoa">
+        <MappingFragment StoreEntitySet="Pessoas">
+          <ScalarProperty Name="photo_name" ColumnName="photo_name" />
+          <ScalarProperty Name="cod" ColumnName="cod" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc1" FunctionName="testModel.Store.proc1" />
+  </EntityContainerMapping>
+</Mapping>

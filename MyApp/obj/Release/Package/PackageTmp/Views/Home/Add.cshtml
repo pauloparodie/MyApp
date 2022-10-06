@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Addition";
+}
+
+<div class="container">
+    <a href="/home/index">Home</a>
+
+    <a href="/home/multiply">Multiplication</a>
+
+    <a href="/home/redirecturl">Redirect</a>
+
+    <a href="/home/queryvalue?value=145">Query Value</a>
+
+
+    <div class="container">
+        <p>
+            val1->@ViewBag.Val1/val2->@ViewBag.Val2
+        </p>
+        @{
+            int val1 = Int32.Parse(@ViewBag.Val1);
+            int val2 = Int32.Parse(@ViewBag.Val2);
+            string color;
+            string attr = "um";
+        }
+
+        1
+        -->@ViewBag.vari1<br />
+        2
+        -->@ViewBag.vari6<br />
+        3
+        -->@ViewData["var1"]<br />
+        4
+        -->@ViewData["var3"]<br />
+
+        @{
+            var s = ViewBag.vari1;
+            @s<br />
+            var d = ViewBag.vari6;
+            @d<br />
+            var r = ViewData["var1"];
+            @r<br />
+            var t = ViewData["var3"];
+            @t<br />
+        }
+
+
+        <p>
+            Process the Add
+        </p>
+
+        @if (val1 + val2 > 30)
+            {
+                color = "red";
+            }
+            else
+            {
+                color = "green";
+            }
+
+        <p style="color:@color" @attr>@(val1 + val2)</p>
+
+
+        @if (val1 + val2 < 30)
+            {
+            <p style="color:@color" class="@attr">@(val1 + val2)</p>
+        }
+        else
+        {
+            <p style="color:@color" @attr>@(val1 + val2)</p>
+        }
+
+        <p style="color:@(val1+val2>30?"red":"green")" @attr>@(attr)</p>
+
+        @("'<div></div>'")
+        @Html.Raw("'<div></div>'")
+
+        
+        @{
+            int val;
+           
+            <hr />
+            Html.RenderAction("Multiply", new { multparam = "ola" });
+            <hr />
+            
+            ViewBag.FragmentTitle = "AdditionFragment";
+            Html.RenderPartial("Fragment");
+            <hr />
+            @Html.Raw((Html.Partial("Fragment").ToString() + "aaaaA"));
+            <hr />
+            @MvcHtmlString.Create(Html.Partial("Fragment").ToString() + "aaaaA");
+            <hr />
+            @RenderPage("~/Views/Shared/Multiplication.cshtml", null);
+            <hr />
+            @RenderPage("~/Views/Shared/Fragment.cshtml", null);
+            <hr />
+            Html.RenderPartial("Multiplication");
+
+        }
+
+    </div>
+
+</div>
+
+

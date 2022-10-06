@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<div class="container">
+    <p class="display-1">
+        Olá
+        @if (User.Identity.IsAuthenticated)
+            {
+            @User.Identity.Name
+        }
+        else
+        {
+            @Html.Raw("Guest");
+            }
+    </p>
+    <hr />
+    <div class="row">
+        @if (User.Identity.IsAuthenticated)
+            {
+            @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "col-2 btn btn-primary ms-1" })
+        }
+        else
+        {
+            @Html.ActionLink("Registar", "Register", "Account", null, new { @class = "col-2 btn btn-primary ms-1" })
+            @Html.ActionLink("Login", "Login", "Account", null, new { @class = "col-2 btn btn-primary ms-1" })
+        }
+        @Html.ActionLink("Pessoas", "ListPessoas", null, new { @class = "col-2 btn btn-primary ms-1" })
+        @Html.ActionLink("Privado", "Private", "AdminOp", new { Area = "Admin" }, new { @class = "col-2 btn btn-primary ms-1" })
+        @Html.ActionLink("Maria", "Maria", "AdminOp", new { Area = "Admin" }, new { @class = "col-2 btn btn-primary ms-1" })
+    </div>
+</div>

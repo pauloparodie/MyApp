@@ -1,0 +1,16 @@
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.RepositoryLayer.dll.config
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.RepositoryLayer.dll
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.RepositoryLayer.pdb
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\EntityFramework.dll
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\EntityFramework.SqlServer.dll
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.DataLayer.dll
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.DomainModel.dll
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.RepositoryContract.dll
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.DataLayer.pdb
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.DomainModel.pdb
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\MyApp.RepositoryContract.pdb
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\EntityFramework.xml
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\bin\Release\EntityFramework.SqlServer.xml
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\obj\Release\MyApp.RepositoryLayer.csprojResolveAssemblyReference.cache
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\obj\Release\MyApp.RepositoryLayer.dll
+D:\Projectos\Testes\MyApp\MyApp.RepositoryLayer\obj\Release\MyApp.RepositoryLayer.pdb

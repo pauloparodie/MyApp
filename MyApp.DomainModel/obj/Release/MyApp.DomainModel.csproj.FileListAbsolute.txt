@@ -1,0 +1,5 @@
+D:\Projectos\Testes\MyApp\MyApp.DomainModel\bin\Release\MyApp.DomainModel.dll.config
+D:\Projectos\Testes\MyApp\MyApp.DomainModel\bin\Release\MyApp.DomainModel.dll
+D:\Projectos\Testes\MyApp\MyApp.DomainModel\bin\Release\MyApp.DomainModel.pdb
+D:\Projectos\Testes\MyApp\MyApp.DomainModel\obj\Release\MyApp.DomainModel.dll
+D:\Projectos\Testes\MyApp\MyApp.DomainModel\obj\Release\MyApp.DomainModel.pdb
