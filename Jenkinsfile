@@ -9,7 +9,7 @@ pipeline {
 	stages {
 		stages('pre') {
 			steps {)
-				println ('NO BRANCH MAIN'')		
+				println ('NO BRANCH MAIN')		
 			}
 		)
 		stage('checkout') {
