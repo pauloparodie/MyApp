@@ -7,7 +7,13 @@ pipeline {
 	}
 	
 	stages {
-
+		stage('checkout') {
+			agent any
+			steps {
+				echo 'checkout do BRANCH->$(env.BRANCHNAME)'
+				checkout sm
+			}		
+		}
 	}
 	
 	post {
