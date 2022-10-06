@@ -213,8 +213,12 @@ ModelManifest.xml
 
 
 *.log
+teste.txt
 *.dll
-MyApp/bin/*.*
+MyApp/teste.txt
+
+
+
 
 
 
