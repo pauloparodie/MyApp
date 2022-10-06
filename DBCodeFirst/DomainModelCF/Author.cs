@@ -13,6 +13,7 @@ namespace DBCodeFirst
     {
         public Author()
         {
+			int were=1;
             Books = new List<Book>();
         }
 
