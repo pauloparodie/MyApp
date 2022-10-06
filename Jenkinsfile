@@ -26,6 +26,7 @@ pipeline {
 					}	
 				}
 				println 'RESULT->$(currentBuild.result)'
+				junit '**/target/*.xml'
 			}
 		}
 		stage('build') {
