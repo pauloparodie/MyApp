@@ -11,7 +11,7 @@ namespace DBCodeFirst
     [Table("Author",Schema ="dbo")]
     public class Author
     {
-        public Author()
+        public Author()//sdfsdf
         {
 			int were=1;
             Books = new List<Book>();
