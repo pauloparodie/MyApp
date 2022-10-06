@@ -15,13 +15,6 @@ pipeline {
 		}
 		stage('checkout') {
 			agent any
-			when {
-				expression {
-					env.val1 == 'ola' {
-						println 'diferente'
-					}
-				}	
-			}
 			steps {
 				println 'branch->$(env.branchname)'
 				checkout scm
