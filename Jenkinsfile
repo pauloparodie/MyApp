@@ -11,7 +11,7 @@ pipeline {
 			steps {
 				println ('NO BRANCH MAIN')		
 			}
-		)
+		}
 		stage('checkout') {
 			println 'branch->$(branchname)'
 			agent any
