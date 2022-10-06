@@ -2,7 +2,7 @@ pipeline {
 	agent none
 	
 	environment {
-		VAL = 'ola'
+		VAL = "ola"
 	}
 	
 	stages {
@@ -11,10 +11,19 @@ pipeline {
 				echo "NO BRANCH MAIN->${env.VAL}"
 			}
 		}
+		stage('pre2') {
+			when {
+				expression {
+					env.VAL == "ola"
+				}
+			}
+			steps {
+				echo "----->IGUAL"
+			}
+		}
 		stage('checkout') {
 			agent any
 			steps {
-				echo "------->CHECKOUT do BRANCH->${env.BRANCH_NAME}"
 				checkout scm
 			}		
 		}
