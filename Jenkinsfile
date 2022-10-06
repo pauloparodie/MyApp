@@ -8,10 +8,10 @@ pipeline {
 	
 	stages {
 		stages('pre') {
-			steps {)
+			steps {
 				println ('NO BRANCH BR1')		
 			}
-		)
+		}
 		stage('checkout') {
 			println 'branch->$(branchname)'
 			agent any
@@ -21,6 +21,7 @@ pipeline {
 					$(val1) == 'ola' {
 						println 'diferente'
 					}
+				}
 			}
 		}
 		stage('build') {
