@@ -13,15 +13,17 @@ pipeline {
 			}
 		}
 		stage('checkout') {
-			println 'branch->$(branchname)'
-			agent any
-			checkout sm
-			when {
-				expression {
-					$(val1) == 'ola' {
-						println 'diferente'
-					}
-				}	
+			steps {
+				println 'branch->$(branchname)'
+				agent any
+				checkout sm
+				when {
+					expression {
+						$(val1) == 'ola' {
+							println 'diferente'
+						}
+					}	
+				}
 			}
 		}
 		stage('build') {
