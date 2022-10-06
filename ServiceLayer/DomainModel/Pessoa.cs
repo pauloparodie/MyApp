@@ -17,6 +17,7 @@ namespace ServiceLayer.DomainModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pessoa()
         {
+            int a =0;
             this.animals = new HashSet<animal>();
         }
     
