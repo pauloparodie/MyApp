@@ -14,9 +14,7 @@ pipeline {
 		}
 		stage('pre2') {
 			when {
-				expression {
-					env.VAL =='ola'
-				}
+				branch "main"
 			}
 			steps {
 				script {
