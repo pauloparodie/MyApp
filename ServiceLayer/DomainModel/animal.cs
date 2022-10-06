@@ -18,7 +18,7 @@ namespace ServiceLayer.DomainModel
         public string name { get; set; }
         public string raca { get; set; }
         public Nullable<int> dono { get; set; }
-    
+    //terte
         public virtual Pessoa Pessoa { get; set; }
     }
 }
