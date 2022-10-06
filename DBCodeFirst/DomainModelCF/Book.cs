@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace DBCodeFirst
-{
+{//erterter
     [Table("Book", Schema = "dbo")]
     public class Book
     {
