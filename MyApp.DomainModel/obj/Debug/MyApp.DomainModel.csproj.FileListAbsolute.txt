@@ -1,6 +1,0 @@
-D:\Projectos\Testes\MyApp\MyApp.DomainModel\bin\Debug\MyApp.DomainModel.dll.config
-D:\Projectos\Testes\MyApp\MyApp.DomainModel\bin\Debug\MyApp.DomainModel.dll
-D:\Projectos\Testes\MyApp\MyApp.DomainModel\bin\Debug\MyApp.DomainModel.pdb
-D:\Projectos\Testes\MyApp\MyApp.DomainModel\obj\Debug\MyApp.DomainModel.dll
-D:\Projectos\Testes\MyApp\MyApp.DomainModel\obj\Debug\MyApp.DomainModel.pdb
-D:\Projectos\Testes\MyApp\MyApp.DomainModel\obj\Debug\MyApp.DomainModel.csprojResolveAssemblyReference.cache
