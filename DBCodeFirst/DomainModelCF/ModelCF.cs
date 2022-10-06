@@ -31,6 +31,7 @@ namespace DBCodeFirst
             //modelBuilder.Entity<Author>().Property(p => p.Age).IsRequired();
             modelBuilder.Entity<Author>().Property(p => p.Age).IsOptional();
         }
+		/*sdfsd*/
 
     }
 }
