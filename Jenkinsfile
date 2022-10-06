@@ -15,7 +15,7 @@ pipeline {
 		stage('pre2') {
 			when {
 				expression {
-					1=1
+					env.VAL =='ola'
 				}
 			}
 			steps {
