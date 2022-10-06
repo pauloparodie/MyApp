@@ -19,7 +19,7 @@ namespace DBCodeFirst
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelCFEntities, Configuration>());
             /*sfsdfsd*/
         }
-
+        //dfdfg
         public virtual DbSet<Author> Authors { get; set; }
 
         public virtual DbSet<Book> Books { get; set; }
