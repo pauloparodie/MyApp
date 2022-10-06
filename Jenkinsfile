@@ -13,9 +13,6 @@ pipeline {
 			}
 		}
 		stage('pre2') {
-			when {
-				branch "main"
-			}
 			steps {
 				script {
 				    if (env.VAL == ola) {
