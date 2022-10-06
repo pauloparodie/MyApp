@@ -21,6 +21,7 @@ pipeline {
 					$(val1) == 'ola' {
 						println 'diferente'
 					}
+				}	
 			}
 		}
 		stage('build') {
