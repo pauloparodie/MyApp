@@ -16,21 +16,22 @@ pipeline {
 		stage('checkout') {
 			agent any
 			steps {
-				println 'branch->$(branchname)'
-				checkout sm
+				println 'branch->$(env.branchname)'
+				checkout scm
 				when {
 					expression {
-						$(val1) == 'ola' {
+						$(env.val1) == 'ola' {
 							println 'diferente'
 						}
 					}	
 				}
+				println 'RESULT->$(currentBuild.result)'
 			}
 		}
 		stage('build') {
 			agent any
 			steps {
-				println 'val1->$(val1)'
+				println 'val1->$(env.val1)'
 				println '$(BUILD_ID)->$(JOB_NAME):$(BUILD_NAME)'
 			}
 		}
