@@ -14,13 +14,7 @@ pipeline {
 		}
 		stage('pre2') {
 			steps {
-				script {
-				    if (env.VAL == ola) {
-					echo 'igual'
-				    } else {
-					echo 'diferente'
-				    }
-				}
+				echo 'no pre2'
 			}
 		}
 		stage('checkout') {
