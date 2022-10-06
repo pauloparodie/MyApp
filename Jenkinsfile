@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage('pre') {
 			steps {
-				echo 'NO BRANCH MAIN'
+				echo 'NO BRANCH MAIN->${env.VAL}'
 			}
 		}
 		stage('checkout') {
@@ -19,7 +19,7 @@ pipeline {
 		}
 		stage('build') {
 			steps {
-				echo "$(env.BUILD_ID)->$(env.JOB_NAME):$(env.BUILD_NAME)"
+				echo '${env.BUILD_ID}->${env.JOB_NAME}:${env.BUILD_NAME}'
 			}
 		}
 	}
