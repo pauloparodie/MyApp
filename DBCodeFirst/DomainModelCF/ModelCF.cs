@@ -9,13 +9,14 @@ using System.Data.Entity.Core.Objects;
 using DBCodeFirst.Migrations;
 
 /*teste*/
-
+//reter
 namespace DBCodeFirst
 {
     public class ModelCFEntities : DbContext
     {
         public ModelCFEntities() : base("name=ModelCFEntities")
         {
+        //dfgdf
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelCFEntities, Configuration>());
             /*sfsdfsd*/
         }
