@@ -17,7 +17,7 @@ pipeline {
 			agent any
 			when {
 				expression {
-					$(env.val1) == 'ola' {
+					env.val1 == 'ola' {
 						println 'diferente'
 					}
 				}	
