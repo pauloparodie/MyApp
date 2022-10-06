@@ -7,12 +7,12 @@ pipeline {
 	}
 	
 	stages {
-		stages('pre') {
+		stage('pre') {
 			steps {
 				echo 'NO BRANCH MAIN'
 			}
 		}
-		stages('pre2') {
+		stage('pre2') {
 			if (env.VAL == 'ola') {                                          
 					echo 'igual'
 				} else {                                   
