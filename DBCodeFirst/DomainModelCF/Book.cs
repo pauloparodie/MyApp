@@ -11,7 +11,7 @@ namespace DBCodeFirst
     [Table("Book", Schema = "dbo")]
     public class Book
     {
-        [Column("Cod")]
+        [Column("Cod")]//dfgdfg
         [Key]
         public int Cod { get; set; }
 
