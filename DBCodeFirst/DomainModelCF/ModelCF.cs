@@ -17,6 +17,7 @@ namespace DBCodeFirst
         public ModelCFEntities() : base("name=ModelCFEntities")
         {
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelCFEntities, Configuration>());
+            /*sfsdfsd*/
         }
 
         public virtual DbSet<Author> Authors { get; set; }
