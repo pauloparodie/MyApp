@@ -10,7 +10,7 @@ pipeline {
 			agent any
 			steps {
 				echo "NO BRANCH MAIN->${env.VAL}"
-				bat("xcopy c:\\temp\\teste.txt c:\\temp\\old")
+				bat("git status")
 			}
 		}
 		stage('pre2') {
