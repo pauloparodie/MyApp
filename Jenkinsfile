@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage('pre') {
 			steps {
-				bat 'echo "NO BRANCH MAIN->${env.VAL}"'
+				echo "NO BRANCH MAIN->${env.VAL}"
 			}
 		}
 		stage('pre2') {
