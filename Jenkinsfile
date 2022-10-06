@@ -19,7 +19,7 @@ pipeline {
 		}
 		stage('build') {
 			steps {
-				echo '$(BUILD_ID)->$(JOB_NAME):$(BUILD_NAME)'
+				echo "$(env.BUILD_ID)->$(env.JOB_NAME):$(env.BUILD_NAME)"
 			}
 		}
 	}
