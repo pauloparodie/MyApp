@@ -15,7 +15,7 @@ namespace DBCodeFirst
         [Key]
         public int Cod { get; set; }
 
-        [Column("Title",TypeName = "varchar(max)")]
+        [Column("Title",TypeName = "varchar(max)")]//dfgdfgd
         public string Title { get; set; }
     
         public int AuthorId { get; set; }
