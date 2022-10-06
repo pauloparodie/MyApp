@@ -9,7 +9,7 @@ using System.Data.Entity.Core.Objects;
 using DBCodeFirst.Migrations;
 
 /*teste*/
-
+//reter
 namespace DBCodeFirst
 {
     public class ModelCFEntities : DbContext
