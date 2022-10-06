@@ -7,13 +7,29 @@ pipeline {
 	}
 	
 	stages {
+		stages('pre') {
+			steps {
+				echo 'NO BRANCH MAIN'
+			}
+		}
+		stages('pre2') {
+			if (env.VAL == 'ola') {                                          
+					echo 'igual'
+				} else {                                   
+					echo 'diferente'
+				} 
+		}
 		stage('checkout') {
 			agent any
 			steps {
-				checkout sm
-			
-				
+				echo 'checkout do BRANCH->$(env.BRANCHNAME)'
+				checkout scm
 			}		
+		}
+		stage('build') {
+			steps {
+				echo '$(BUILD_ID)->$(JOB_NAME):$(BUILD_NAME)'
+			}
 		}
 	}
 	
