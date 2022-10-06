@@ -11,6 +11,7 @@ namespace DBCodeFirst
     [Table("Author",Schema ="dbo")]
     public class Author
     {
+	    /*sdfs*/
         public Author()
         {
 			int were=1;
