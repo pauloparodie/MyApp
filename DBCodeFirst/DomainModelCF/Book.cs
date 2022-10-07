@@ -23,5 +23,6 @@ namespace DBCodeFirst
 //sdfsdf
         [ForeignKey("AuthorId")]
         public virtual Author Author  { get; set; }
+        //sdfsdf
     }
 }
