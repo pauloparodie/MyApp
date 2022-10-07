@@ -14,6 +14,7 @@ namespace DBCodeFirst
 	    /*sdfs*/
         public Author()
         {
+		//ddfg
 			int were=1;
             Books = new List<Book>();
         }
