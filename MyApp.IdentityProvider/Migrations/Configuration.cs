@@ -15,6 +15,7 @@ namespace MyApp.IdentityProvider.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            CommandTimeout = 1000;
         }
 
         protected override void Seed(ApplicationDbContext context)

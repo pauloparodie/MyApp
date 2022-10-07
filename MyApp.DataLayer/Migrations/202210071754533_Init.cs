@@ -1,4 +1,4 @@
-﻿namespace MyApp.DataLayer.Migrations
+namespace MyApp.DataLayer.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
@@ -14,11 +14,11 @@
                         Cod = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false),
                         Raca = c.String(),
-                        Dono = c.Int(),
+                        DonoCod = c.Int(),
                     })
                 .PrimaryKey(t => t.Cod)
-                .ForeignKey("dbo.Pessoas", t => t.Dono)
-                .Index(t => t.Dono);
+                .ForeignKey("dbo.Pessoas", t => t.DonoCod)
+                .Index(t => t.DonoCod);
             
             CreateTable(
                 "dbo.Pessoas",
@@ -28,7 +28,7 @@
                         Name = c.String(nullable: false),
                         Age = c.Int(nullable: false),
                         Pais = c.String(),
-                        Photo_Name = c.String(),
+                        PhotoName = c.String(),
                     })
                 .PrimaryKey(t => t.Cod);
             
@@ -36,8 +36,8 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Animals", "Dono", "dbo.Pessoas");
-            DropIndex("dbo.Animals", new[] { "Dono" });
+            DropForeignKey("dbo.Animals", "DonoCod", "dbo.Pessoas");
+            DropIndex("dbo.Animals", new[] { "DonoCod" });
             DropTable("dbo.Pessoas");
             DropTable("dbo.Animals");
         }

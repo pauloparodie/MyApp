@@ -54,17 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\ModelContext.cs" />
-    <Compile Include="Migrations\202209301006558_Init.cs" />
-    <Compile Include="Migrations\202209301006558_Init.designer.cs">
-      <DependentUpon>202209301006558_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202209301839080_ChangePhotoName.cs" />
-    <Compile Include="Migrations\202209301839080_ChangePhotoName.Designer.cs">
-      <DependentUpon>202209301839080_ChangePhotoName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202209301852123_ChangeAnimalDonoCod.cs" />
-    <Compile Include="Migrations\202209301852123_ChangeAnimalDonoCod.Designer.cs">
-      <DependentUpon>202209301852123_ChangeAnimalDonoCod.cs</DependentUpon>
+    <Compile Include="Migrations\202210071754533_Init.cs" />
+    <Compile Include="Migrations\202210071754533_Init.Designer.cs">
+      <DependentUpon>202210071754533_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,14 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202209301006558_Init.resx">
-      <DependentUpon>202209301006558_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202209301839080_ChangePhotoName.resx">
-      <DependentUpon>202209301839080_ChangePhotoName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202209301852123_ChangeAnimalDonoCod.resx">
-      <DependentUpon>202209301852123_ChangeAnimalDonoCod.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210071754533_Init.resx">
+      <DependentUpon>202210071754533_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

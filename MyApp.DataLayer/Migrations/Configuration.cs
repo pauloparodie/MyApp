@@ -11,6 +11,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            CommandTimeout = 1000;
         }
 
         protected override void Seed(ModelContext context)
