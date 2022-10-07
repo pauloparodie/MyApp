@@ -10,6 +10,7 @@ using DBCodeFirst.Migrations;
 
 /*teste*/
 //reter
+//sdfsdf
 namespace DBCodeFirst
 {
     public class ModelCFEntities : DbContext
