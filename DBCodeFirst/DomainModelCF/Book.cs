@@ -17,10 +17,13 @@ namespace DBCodeFirst
 //sdfsd
         [Column("Title",TypeName = "varchar(max)")]
         public string Title { get; set; }
+        ///sdfsdf
     
         public int AuthorId { get; set; }
-
+//sdfsdf
+        //dgdfgdfg
         [ForeignKey("AuthorId")]
         public virtual Author Author  { get; set; }
+        //sdfsdf
     }
 }

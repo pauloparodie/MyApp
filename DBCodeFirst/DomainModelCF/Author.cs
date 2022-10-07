@@ -12,8 +12,13 @@ namespace DBCodeFirst
     public class Author
     {
 	    /*sdfs*/
+	    /*dfsd*/
+	    //dfgdf
         public Author()
         {
+		//ddfg
+		//dfdf
+		//sdftgdrt
 			int were=1;
             Books = new List<Book>();
         }
