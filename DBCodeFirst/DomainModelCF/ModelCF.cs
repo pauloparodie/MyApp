@@ -28,7 +28,7 @@ namespace DBCodeFirst
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+//sdfsdf
             //modelBuilder.Entity<Author>().Property(p => p.Age).HasDefaultValue(12);
             //modelBuilder.Entity<Author>().Property(p => p.Age).IsRequired();
             modelBuilder.Entity<Author>().Property(p => p.Age).IsOptional();
