@@ -4,7 +4,7 @@ using MyApp.DomainModel.Entities;
 using MyApp.RepositoryLayer;
 using System.Threading.Tasks;
 using MyApp.RepositoryContract;
-
+using System.Diagnostics;
 
 
 namespace MyApp.Tests
@@ -34,6 +34,9 @@ namespace MyApp.Tests
                 Assert.IsTrue(newPessoa.Pais.Equals(pessoaDb.Pais));
                 Assert.IsTrue(newPessoa.Age.Equals(pessoaDb.Age));
                 Assert.IsTrue(newPessoa.PhotoName.Equals(pessoaDb.PhotoName));
+
+                Console.WriteLine("TESTE COM SUCESSO1");
+                Trace.WriteLine("TESTE COM SUCESSO2");
             }
         }
     }
