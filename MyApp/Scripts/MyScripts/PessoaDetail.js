@@ -7,7 +7,8 @@
 const SaveDataAsync = async function (data) {
     await $.ajax({
         //url: 'http://www.myapiapp.com:81/Api/Pessoa/Save',
-        url: 'http://myapiappparodie.azurewebsites.net/Api/Pessoa/Save',
+        url: 'https://myapiappparodie.azurewebsites.net/Api/Pessoa/Save',
+        url: 'http://localhost:504//Api/Pessoa/Save',
         method: 'POST',
         contentType: 'application/json',
         data: data,
