@@ -222,7 +222,7 @@ ModelManifest.xml
 
 *.log
 teste.txt
-
+*.dll
 MyApp/teste.txt
 
 
