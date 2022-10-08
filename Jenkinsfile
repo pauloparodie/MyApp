@@ -35,7 +35,7 @@ pipeline {
 			steps {
 				echo "${env.BUILD_ID}->${env.JOB_NAME}:${env.BUILD_NAME}"
 				bat("C:\\Programas\\NuGet\\nuget restore -PackagesDirectory ./packages")
-				bat("C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild myapp.sln")
+				bat("C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild myapp/myapp.csproj")
 			}
 		}
 	}
