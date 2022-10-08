@@ -31,6 +31,7 @@ pipeline {
 			}		
 		}
 		stage('build') {
+		agent any
 			steps {
 				echo "${env.BUILD_ID}->${env.JOB_NAME}:${env.BUILD_NAME}"
 				bat("msbuild myapp/myapp.csproj")
