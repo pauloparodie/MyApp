@@ -33,6 +33,7 @@ pipeline {
 		stage('build') {
 			steps {
 				echo "${env.BUILD_ID}->${env.JOB_NAME}:${env.BUILD_NAME}"
+				msbuild myapp/myapp.csproj
 			}
 		}
 	}
