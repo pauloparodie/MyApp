@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v1
       with:
-        registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_b93be6a34dd24dbb89dd347d62c22a8c }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_58e181d4072447ea996b99d375c79cb8 }}
+        registry: https://myappcontregistry.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_4cd8c2eb25074eed8832b10084f3b6cd }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b93be6a34dd24dbb89dd347d62c22a8c }}/mcr.microsoft.com/dotnet/aspnet:${{ github.sha }}
+        tags: myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}/a:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'MyAppParodieCont'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_b5260a11b4164254bac139b98d99c12a }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b93be6a34dd24dbb89dd347d62c22a8c }}/mcr.microsoft.com/dotnet/aspnet:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_494570c3b0dd4f098bdc3750278de24e }}
+        images: 'myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}/a:${{ github.sha }}'
