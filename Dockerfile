@@ -1,4 +1,4 @@
 
 
-from mcr.microsoft.com/dotnet/framework/samples:aspnetapp
+from mcr.microsoft.com/dotnet/aspnet:6.0
 COPY ./published/* /inetpub/wwwroot
