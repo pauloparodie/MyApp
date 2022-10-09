@@ -61,30 +61,28 @@ jobs:
         uses: docker/login-action@v1
         with:
            registry: myappcontregistry.azurecr.io
-           username: ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_USERNAME }}
-           password: ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_PASSWORD }}
+           username: ${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}
+           password: ${{ secrets.AzureAppService_ContainerPassword_4cd8c2eb25074eed8832b10084f3b6cd }}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v2
         with:
            push: true
-           tags: myappcontregistry.azurecr.io/myappparodiecontapp:${{ github.sha }}
+           tags: myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}/a::${{ github.sha }}
            file: ./Dockerfile
   deploy:
-      runs-on: ubuntu-latest
-      needs: builddocker
+    runs-on: ubuntu-latest
+    needs: builddocker
+    environment:
+        name: 'production'
+        url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
-      steps:
-         - name: Azure Login
-           uses: azure/login@v1
-           with:
-              creds: ${{ secrets.MYAPPPARODIECONTAPP_AZURE_CREDENTIALS }}
-
-
-         - name: Deploy to containerapp
-           uses: azure/CLI@v1
-           with:
-              inlineScript: |
-                 az config set extension.use_dynamic_install=yes_without_prompt
-                 az containerapp registry set -n myappparodiecontapp -g groupcont --server myappcontregistry.azurecr.io --username  ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_USERNAME }} --password ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_PASSWORD }}
-                 az containerapp update -n myappparodiecontapp -g groupcont --image myappcontregistry.azurecr.io/myappparodiecontapp:${{ github.sha }}
+    steps:
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+           app-name: 'MyAppParodieCont'
+           slot-name: 'production'
+           publish-profile: ${{ secrets.AzureAppService_PublishProfile_494570c3b0dd4f098bdc3750278de24e }}
+           images: 'myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}/a:${{ github.sha }}'
