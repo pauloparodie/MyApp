@@ -1,4 +1,4 @@
-name: My Complete CI/CD Action
+name: My Complete CI/CD  Action
 
 # When this action will be executed
 on:
