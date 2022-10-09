@@ -1,4 +1,4 @@
 
 
-from mcr.microsoft.com/dotnet/aspnet:5.0-windowsservercore-ltsc2019
+from mcr.microsoft.com/dotnet/aspnet:6.0
 COPY ./* /inetpub/wwwroot
