@@ -15,84 +15,84 @@ on:
 
 jobs:
 
-	build:
-	  runs-on: windows-latest
+build:
+  runs-on: windows-latest
 
-	  steps:
-		- name: Checkout
-		  uses: actions/checkout@v2
-		
-		- name: Setup MSBuild path
-		  uses: microsoft/setup-msbuild@v1.0.2
+  steps:
+	- name: Checkout
+	  uses: actions/checkout@v2
 
-		- name: Setup NuGet
-		  uses: NuGet/setup-nuget@v1.0.5
+	- name: Setup MSBuild path
+	  uses: microsoft/setup-msbuild@v1.0.2
 
-		- name: Restore NuGet packages
-		  run: nuget restore
+	- name: Setup NuGet
+	  uses: NuGet/setup-nuget@v1.0.5
 
-		- name: Publish to folder
-		  run: msbuild myapp/myapp.csproj /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
+	- name: Restore NuGet packages
+	  run: nuget restore
 
-		- name: Upload artifact for deployment job
-		  uses: actions/upload-artifact@v2
-		  with:
-			name: ASP-app
-			path: '/published/**'
+	- name: Publish to folder
+	  run: msbuild myapp/myapp.csproj /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
-	postbuild:
-		runs-on: windows-latest
-		needs: build
-		
-		environment:
-		  name: 'Production'
-		  url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+	- name: Upload artifact for deployment job
+	  uses: actions/upload-artifact@v2
+	  with:
+		name: ASP-app
+		path: '/published/**'
 
-		steps:
-		  - name: Download artifact from build job
-			uses: actions/download-artifact@v2
-			with:
-			  name: ASP-app
+postbuild:
+	runs-on: windows-latest
+	needs: build
 
+	environment:
+	  name: 'Production'
+	  url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
-	builddocker:
-	  runs-on: ubuntu-latest
-	  needs: postbuild
-
-	  steps:
-		- name: Set up Docker Buildx
-		  uses: docker/setup-buildx-action@v1
-
-		- name: Log in to container registry
-		  uses: docker/login-action@v1
-		  with:
-			registry: myappcontregistry.azurecr.io
-			username: ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_USERNAME }}
-			password: ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_PASSWORD }}
-
-		- name: Build and push container image to registry
-		  uses: docker/build-push-action@v2
-		  with:
-			push: true
-			tags: myappcontregistry.azurecr.io/myappparodiecontapp:${{ github.sha }}
-			file: ./Dockerfile
+	steps:
+	  - name: Download artifact from build job
+		uses: actions/download-artifact@v2
+		with:
+		  name: ASP-app
 
 
-	deploy:
-	  runs-on: ubuntu-latest
-	  needs: builddocker
+builddocker:
+  runs-on: ubuntu-latest
+  needs: postbuild
 
-	  steps:
-		- name: Azure Login
-		  uses: azure/login@v1
-		  with:
-			creds: ${{ secrets.MYAPPPARODIECONTAPP_AZURE_CREDENTIALS }}
+  steps:
+	- name: Set up Docker Buildx
+	  uses: docker/setup-buildx-action@v1
+
+	- name: Log in to container registry
+	  uses: docker/login-action@v1
+	  with:
+		registry: myappcontregistry.azurecr.io
+		username: ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_USERNAME }}
+		password: ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_PASSWORD }}
+
+	- name: Build and push container image to registry
+	  uses: docker/build-push-action@v2
+	  with:
+		push: true
+		tags: myappcontregistry.azurecr.io/myappparodiecontapp:${{ github.sha }}
+		file: ./Dockerfile
 
 
-		- name: Deploy to containerapp
-		  uses: azure/CLI@v1
-		  with:
-			inlineScript: |
-			  az config set extension.use_dynamic_install=yes_without_prompt
-			  az containerapp registry set -n myappparodiecontapp -g groupcont --server myappcontregistry.azurecr.io --username  ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_USERNAME }} --password ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_PASSWORD }}
-			  az containerapp update -n myappparodiecontapp -g groupcont --image myappcontregistry.azurecr.io/myappparodiecontapp:${{ github.sha }}
+deploy:
+  runs-on: ubuntu-latest
+  needs: builddocker
+
+  steps:
+	- name: Azure Login
+	  uses: azure/login@v1
+	  with:
+		creds: ${{ secrets.MYAPPPARODIECONTAPP_AZURE_CREDENTIALS }}
+
+
+	- name: Deploy to containerapp
+	  uses: azure/CLI@v1
+	  with:
+		inlineScript: |
+		  az config set extension.use_dynamic_install=yes_without_prompt
+		  az containerapp registry set -n myappparodiecontapp -g groupcont --server myappcontregistry.azurecr.io --username  ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_USERNAME }} --password ${{ secrets.MYAPPPARODIECONTAPP_REGISTRY_PASSWORD }}
+		  az containerapp update -n myappparodiecontapp -g groupcont --image myappcontregistry.azurecr.io/myappparodiecontapp:${{ github.sha }}
