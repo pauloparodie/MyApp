@@ -21,17 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-
-  postbuild:
-    runs-on: windows-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
   builddocker:
     runs-on: ubuntu-latest
-    needs: postbuild
 
     steps:
       - name: Set up Docker Buildx
