@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: My Complete CI/CD Action
+name: Build and deploy container app to Azure Web App - MyAppParodieCont
 
 on:
   push:
@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://myappcontregistry.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_eeb9d06dc6e44cc0a2f74522e7b546b0 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_73e5609e88ef439cbffddaf98f9f1982 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_4cd8c2eb25074eed8832b10084f3b6cd }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_eeb9d06dc6e44cc0a2f74522e7b546b0 }}/myappparodiecontimg:${{ github.sha }}
+        tags: myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}/a:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'MyAppParodieCont'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c8fedb126a564b179af9f82b95be3a37 }}
-        images: 'myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_eeb9d06dc6e44cc0a2f74522e7b546b0 }}/myappparodiecontimg:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_494570c3b0dd4f098bdc3750278de24e }}
+        images: 'myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}/a:${{ github.sha }}'
