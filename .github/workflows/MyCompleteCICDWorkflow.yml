@@ -68,7 +68,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
            push: true
-           tags: myappcontregistry.azurecr.io/myappparodiecont:${{ github.sha }}
+           tags: myappcontregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1741872cd95048b781fc9589eecaf72a }}/a:${{ github.sha }}
            file: ./Dockerfile
   deploy:
     runs-on: ubuntu-latest
