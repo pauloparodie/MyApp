@@ -1,6 +1,6 @@
 
 
-FROM mcr.microsoft.com/windows/servercore/iis:1909
+FROM mcr.microsoft.com/windows/servercore:ltsc2022
 COPY ./* /inetpub/wwwroot
 WORKDIR /inetpub/wwwroot
 EXPOSE 5000
