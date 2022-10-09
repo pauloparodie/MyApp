@@ -1,6 +1,6 @@
 
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-windowsservercore-ltsc2019
+FROM mcr.microsoft.com/windows/servercore/iis:latest
 COPY ./* /inetpub/wwwroot
 WORKDIR /inetpub/wwwroot
 EXPOSE 5000
