@@ -15,6 +15,7 @@ namespace ServiceLayer.DomainModel
     public partial class animal
     {
         public int cod { get; set; }
+		//ljk
         public string name { get; set; }
         public string raca { get; set; }
         public Nullable<int> dono { get; set; }
