@@ -1,6 +1,6 @@
 
 
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
+FROM mcr.microsoft.com/dotnet/framework/aspnet:latest
 COPY ./* /inetpub/wwwroot
 WORKDIR /inetpub/wwwroot
 EXPOSE 5000
