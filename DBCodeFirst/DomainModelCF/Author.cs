@@ -11,6 +11,7 @@ namespace DBCodeFirst
     [Table("Author",Schema ="dbo")]
     public class Author
     {
+        //dd
 	    //cc
 	    //bb
         //aa
