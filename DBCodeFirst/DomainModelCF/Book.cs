@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations;
 //ertert
 namespace DBCodeFirst
 {
+    //bb
     /aa
     //erterter
     [Table("Book", Schema = "dbo")]
