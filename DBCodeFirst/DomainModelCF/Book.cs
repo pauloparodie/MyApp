@@ -7,7 +7,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 //ertert
 namespace DBCodeFirst
-{//erterter
+{
+    /aa
+    //erterter
     [Table("Book", Schema = "dbo")]
     public class Book
     {
